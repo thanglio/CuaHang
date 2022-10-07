@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/khachhang")
 public class KhachHangController {
     @Autowired
     KhachHangServiceImplement khachHangServiceImplement;
