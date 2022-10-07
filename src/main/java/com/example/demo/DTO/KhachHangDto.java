@@ -22,6 +22,8 @@ public class KhachHangDto extends AbstractDto {
 
     private DiaChi diaChi;
 
+
+
     public String getTenKhachHang(String tenKhachHang) {
         return this.tenKhachHang;
     }
