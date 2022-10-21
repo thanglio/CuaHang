@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/cuahang")
 public class CuaHangController {
     @Autowired
-    CuaHangServiceImplement cuaHangServiceImplement
+    CuaHangServiceImplement cuaHangServiceImplement;
+
     @DeleteMapping
     public void deleteCuaHang(Long id){
     cuaHangServiceImplement.deleteCuaHang(id);
