@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class CuaHangConverter {
 
-    public CuaHangDto toDto(CuaHang cuaHang){
-        CuaHangDto cuaHangDto=new CuaHangDto();
-        if(cuaHang.getId()!=null)
+    public CuaHangDto toDto(CuaHang cuaHang) {
+        CuaHangDto cuaHangDto = new CuaHangDto();
+        if (cuaHang.getId() != null)
             cuaHangDto.setId(cuaHang.getId());
         cuaHangDto.setTenCuaHang(cuaHang.getTenCuaHang());
         cuaHangDto.setTenChuCuaHang(cuaHang.getTenChuCuaHang());
@@ -28,7 +28,8 @@ public class CuaHangConverter {
         cuaHangDto.setModifiedBy(cuaHang.getModifiedBy());
         return cuaHangDto;
     }
-    public CuaHang toCuaHang(CuaHangDto cuaHangDto){
+
+    public CuaHang toCuaHang(CuaHangDto cuaHangDto) {
         CuaHang cuaHang = new CuaHang();
         cuaHang.setTenCuaHang(cuaHangDto.getTenCuaHang());
         cuaHang.setTenChuCuaHang(cuaHangDto.getTenChuCuaHang());
@@ -41,7 +42,7 @@ public class CuaHangConverter {
         return cuaHang;
     }
 
-    public CuaHang toCuaHang(CuaHangDto cuaHangDto,CuaHang cuaHang){
+    public CuaHang toCuaHang(CuaHangDto cuaHangDto, CuaHang cuaHang) {
         cuaHang.setTenCuaHang(cuaHangDto.getTenCuaHang());
         cuaHang.setTenChuCuaHang(cuaHangDto.getTenChuCuaHang());
         cuaHang.setCapBac(cuaHangDto.getCapBac());

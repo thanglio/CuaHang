@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 @Repository
-public interface KhachHangRepo extends JpaRepository<KhachHang,Long> {
+public interface KhachHangRepo extends JpaRepository<KhachHang, Long> {
     @Query(value = "SELECT * FROM khach_hang",
             nativeQuery = true)
     public List<KhachHang> getgetAllKhachHang();

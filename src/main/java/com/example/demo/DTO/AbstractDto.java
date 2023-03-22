@@ -7,44 +7,55 @@ import java.util.List;
 public class AbstractDto<T> {
     private Long id;
     private String createdBy;
-    private Date createdDate;
+    private LocalDateTime createdDate;
     private String modifiedBy;
-    private Date modifiedDate;
+    private LocalDateTime modifiedDate;
     private List<T> listResult = new ArrayList<>();
 
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getCreatedBy() {
         return createdBy;
     }
+
     public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
-    public Date getCreatedDate() {
+
+    public LocalDateTime getCreatedDate() {
         return createdDate;
     }
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createdLocalDateTime = createdDate;
     }
+
     public String getModifiedBy() {
         return modifiedBy;
     }
+
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
     }
-    public Date getModifiedDate() {
+
+    public LocalDateTime getModifiedDate() {
         return modifiedDate;
     }
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
+
+    public void setModifiedDate(LocalDateTime modifiedDate) {
+        this.modifiedLocalDateTime = modifiedDate;
     }
+
     public List<T> getListResult() {
         return listResult;
     }
+
     public void setListResult(List<T> listResult) {
         this.listResult = listResult;
     }

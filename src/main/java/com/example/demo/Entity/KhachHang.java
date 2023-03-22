@@ -8,14 +8,14 @@ import java.util.Date;
 
 @Entity
 @Table(name = "khach_hang")
-public class KhachHang extends BaseEntity{
+public class KhachHang extends BaseEntity {
 
     @Column
     private String tenKhachHang;
 
     @Column
     @DateTimeFormat(pattern = "MM/dd/YYYY ")
-    private Date ngaySinh;
+    private LocalDateTime ngaySinh;
 
     @Column
     private String gioiTinh;
@@ -42,11 +42,11 @@ public class KhachHang extends BaseEntity{
         this.tenKhachHang = tenKhachHang;
     }
 
-    public Date getNgaySinh() {
+    public LocalDateTime getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(Date ngaySinh) {
+    public void setNgaySinh(LocalDateTime ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 

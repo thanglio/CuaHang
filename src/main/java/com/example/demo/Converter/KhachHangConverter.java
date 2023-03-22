@@ -28,7 +28,7 @@ public class KhachHangConverter {
         return khachHangDto;
     }
 
-    public KhachHang toKhachHang(KhachHangDto khachHangDto){
+    public KhachHang toKhachHang(KhachHangDto khachHangDto) {
         KhachHang khachHang = new KhachHang();
 
 
@@ -42,7 +42,7 @@ public class KhachHangConverter {
         return khachHang;
     }
 
-    public KhachHang toKhachHang(KhachHangDto khachHangDto, KhachHang khachHang){
+    public KhachHang toKhachHang(KhachHangDto khachHangDto, KhachHang khachHang) {
         khachHang.setTenKhachHang(khachHangDto.getTenKhachHang());
         khachHang.setNgaySinh(khachHangDto.getNgaySinh());
         khachHang.setGioiTinh(khachHangDto.getGioiTinh());

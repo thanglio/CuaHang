@@ -24,7 +24,7 @@ public class CuaHangServiceImplement implements CuaHangService {
     @Override
     public CuaHangDto addCuaHang(CuaHangDto cuaHangDto) {
         CuaHang cuaHang = new CuaHang();
-        cuaHang= cuaHangConverter.toCuaHang(cuaHangDto);
+        cuaHang = cuaHangConverter.toCuaHang(cuaHangDto);
         cuaHangRepo.save(cuaHang);
         return cuaHangDto;
     }

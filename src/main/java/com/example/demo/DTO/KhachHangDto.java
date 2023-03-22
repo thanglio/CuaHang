@@ -10,18 +10,17 @@ public class KhachHangDto extends AbstractDto {
 
     private String tenKhachHang;
 
-    private Date ngaySinh;
+    private LocalDateTime ngaySinh;
 
     private String gioiTinh;
 
     private String soDienThoai;
 
-    private int kieuKhachHang; // true : khach si; false: khach Le
+    private int kieuKhachHang;
 
     private String ghiChu;
 
     private DiaChi diaChi;
-
 
 
     public String getTenKhachHang(String tenKhachHang) {
@@ -32,11 +31,11 @@ public class KhachHangDto extends AbstractDto {
         this.tenKhachHang = tenKhachHang;
     }
 
-    public Date getNgaySinh() {
+    public LocalDateTime getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(Date ngaySinh) {
+    public void setNgaySinh(LocalDateTime ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 

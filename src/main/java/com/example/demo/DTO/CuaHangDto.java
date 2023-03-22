@@ -3,8 +3,7 @@ package com.example.demo.DTO;
 import com.example.demo.Entity.*;
 
 
-
-public class CuaHangDto extends  AbstractDto{
+public class CuaHangDto extends AbstractDto {
 
     private String tenCuaHang;
 

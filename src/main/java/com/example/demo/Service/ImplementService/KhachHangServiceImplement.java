@@ -21,9 +21,9 @@ public class KhachHangServiceImplement implements KhachHangService {
 
     @Override
     public List<KhachHangDto> findAll() {
-        List<KhachHangDto>  listKhachHangDTO= new ArrayList<>();
-        List<KhachHang> listKhachHang= khachHangRepo.getgetAllKhachHang();
-        for (int i=0;i<listKhachHang.size();i++)
+        List<KhachHangDto> listKhachHangDTO = new ArrayList<>();
+        List<KhachHang> listKhachHang = khachHangRepo.getgetAllKhachHang();
+        for (int i = 0; i < listKhachHang.size(); i++)
             listKhachHangDTO.add(khachHangConverter.toDto(listKhachHang.get(i)));
         return listKhachHangDTO;
     }
@@ -31,17 +31,17 @@ public class KhachHangServiceImplement implements KhachHangService {
     @Override
     public KhachHangDto save(KhachHangDto khachHangDto) {
         KhachHang khachHang = new KhachHang();
-        if(khachHangDto.getId() != null){
+        if (khachHangDto.getId() != null) {
             KhachHang oldKhachHang = khachHangRepo.findById(khachHangDto.getId()).get();
-            khachHang=khachHangConverter.toKhachHang(khachHangDto,khachHang);
-        }else  khachHang = khachHangConverter.toKhachHang(khachHangDto);
+            khachHang = khachHangConverter.toKhachHang(khachHangDto, khachHang);
+        } else khachHang = khachHangConverter.toKhachHang(khachHangDto);
         khachHangRepo.save(khachHang);
         return khachHangDto;
     }
 
     @Override
     public void delete(long[] ids) {
-        for(long item: ids) {
+        for (long item : ids) {
             khachHangRepo.deleteById(item);
         }
     }

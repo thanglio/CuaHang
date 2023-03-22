@@ -14,23 +14,25 @@ public class KhachHangController {
     KhachHangServiceImplement khachHangServiceImplement;
 
     @GetMapping()
-    public List<KhachHangDto> getAllKhachHang(){
+    public List<KhachHangDto> getAllKhachHang() {
         return khachHangServiceImplement.findAll();
     }
 
     @PostMapping()
-    public KhachHangDto addKhachHang(@RequestBody KhachHangDto dto){
+    public KhachHangDto addKhachHang(@RequestBody KhachHangDto dto) {
         khachHangServiceImplement.save(dto);
         return dto;
     }
+
     @PutMapping(value = "{id}")
-    public KhachHangDto updateKhachHang(@RequestBody KhachHangDto khachHangDto,@PathVariable("id") Long id){
+    public KhachHangDto updateKhachHang(@RequestBody KhachHangDto khachHangDto, @PathVariable("id") Long id) {
         khachHangDto.setId(id);
         return khachHangServiceImplement.save(khachHangDto);
     }
+
     @DeleteMapping()
     public void deleteKhachHang(@RequestBody long[] ids) {
         khachHangServiceImplement.delete(ids);
     }
-   
+
 }

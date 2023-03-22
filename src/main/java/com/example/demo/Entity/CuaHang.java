@@ -6,10 +6,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "cua_hang")
-public class CuaHang extends  BaseEntity{
+public class CuaHang extends BaseEntity {
 
 
-    @Column
+   @Column
     private String tenCuaHang;
 
     @Column
