@@ -4,7 +4,7 @@ package com.example.demo.Entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "khach_hang")
@@ -15,7 +15,7 @@ public class KhachHang extends BaseEntity {
 
     @Column
     @DateTimeFormat(pattern = "MM/dd/YYYY ")
-    private LocalDateTime ngaySinh;
+    private LocalDate ngaySinh;
 
     @Column
     private String gioiTinh;
@@ -42,11 +42,11 @@ public class KhachHang extends BaseEntity {
         this.tenKhachHang = tenKhachHang;
     }
 
-    public LocalDateTime getNgaySinh() {
+    public LocalDate getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(LocalDateTime ngaySinh) {
+    public void setNgaySinh(LocalDate ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 

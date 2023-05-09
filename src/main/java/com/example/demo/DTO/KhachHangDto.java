@@ -1,16 +1,14 @@
 package com.example.demo.DTO;
 
 import com.example.demo.Entity.DiaChi;
-import org.springframework.format.annotation.DateTimeFormat;
 
-
-import java.util.Date;
+import java.time.LocalDate;
 
 public class KhachHangDto extends AbstractDto {
 
     private String tenKhachHang;
 
-    private LocalDateTime ngaySinh;
+    private LocalDate ngaySinh;
 
     private String gioiTinh;
 
@@ -31,11 +29,11 @@ public class KhachHangDto extends AbstractDto {
         this.tenKhachHang = tenKhachHang;
     }
 
-    public LocalDateTime getNgaySinh() {
+    public LocalDate getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(LocalDateTime ngaySinh) {
+    public void setNgaySinh(LocalDate ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 

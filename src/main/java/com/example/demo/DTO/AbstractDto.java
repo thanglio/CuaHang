@@ -1,15 +1,15 @@
 package com.example.demo.DTO;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class AbstractDto<T> {
     private Long id;
     private String createdBy;
-    private LocalDateTime createdDate;
+    private LocalDate createdDate;
     private String modifiedBy;
-    private LocalDateTime modifiedDate;
+    private LocalDate modifiedDate;
     private List<T> listResult = new ArrayList<>();
 
     public Long getId() {
@@ -28,12 +28,12 @@ public class AbstractDto<T> {
         this.createdBy = createdBy;
     }
 
-    public LocalDateTime getCreatedDate() {
+    public LocalDate getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(LocalDateTime createdDate) {
-        this.createdLocalDateTime = createdDate;
+    public void setCreatedDate(LocalDate createdDate) {
+        this.createdDate = createdDate;
     }
 
     public String getModifiedBy() {
@@ -44,12 +44,12 @@ public class AbstractDto<T> {
         this.modifiedBy = modifiedBy;
     }
 
-    public LocalDateTime getModifiedDate() {
+    public LocalDate getModifiedDate() {
         return modifiedDate;
     }
 
-    public void setModifiedDate(LocalDateTime modifiedDate) {
-        this.modifiedLocalDateTime = modifiedDate;
+    public void setModifiedDate(LocalDate modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 
     public List<T> getListResult() {
