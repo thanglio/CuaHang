@@ -5,7 +5,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -17,9 +16,6 @@ public class SanPham extends BaseEntity {
     private String tenSanPham;
 
     @Column
-    private int soLuong;
-
-    @Column
     private int giaNhap;
 
     @Column
@@ -28,8 +24,6 @@ public class SanPham extends BaseEntity {
     @Column
     private int giamGia;
 
-    @Column
-    private int idNguon;
 
     @Column
     private String thongTin;
@@ -42,9 +36,8 @@ public class SanPham extends BaseEntity {
     @DateTimeFormat(pattern = "MM/dd/YYYY")
     private LocalDateTime hanSuDung;
 
-    @ManyToOne
-    @JoinColumn(name = "id_cua_hang")
-    private CuaHang cuaHang;
+    @OneToMany(mappedBy = "sanPham")
+    Set<CuaHang_SanPham>  cuaHangSanPhams;
 
     @OneToMany(mappedBy = "sanPham")
     private Set<Images> imagesSet;
@@ -61,12 +54,12 @@ public class SanPham extends BaseEntity {
         this.tenSanPham = tenSanPham;
     }
 
-    public int getSoLuong() {
-        return soLuong;
+    public Set<CuaHang_SanPham> getCuaHangSanPhams() {
+        return cuaHangSanPhams;
     }
 
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
+    public void setCuaHangSanPhams(Set<CuaHang_SanPham> cuaHangSanPhams) {
+        this.cuaHangSanPhams = cuaHangSanPhams;
     }
 
     public int getGiaNhap() {
@@ -93,13 +86,7 @@ public class SanPham extends BaseEntity {
         this.giamGia = giamGia;
     }
 
-    public int getIdNguon() {
-        return idNguon;
-    }
 
-    public void setIdNguon(int idNguon) {
-        this.idNguon = idNguon;
-    }
 
     public String getThongTin() {
         return thongTin;
@@ -125,13 +112,6 @@ public class SanPham extends BaseEntity {
         this.hanSuDung = hanSuDung;
     }
 
-    public CuaHang getCuaHang() {
-        return cuaHang;
-    }
-
-    public void setCuaHang(CuaHang cuaHang) {
-        this.cuaHang = cuaHang;
-    }
 
     public Set<Images> getImagesSet() {
         return imagesSet;

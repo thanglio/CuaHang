@@ -39,12 +39,20 @@ public class CuaHang extends BaseEntity {
     @OneToMany(mappedBy = "cuaHangx")
     private Set<HoaDon> hoaDons;
 
-    //Cửa hàng 1-n Sản phẩm
+    //Cửa hàng n-n Sản phẩm
     @OneToMany(mappedBy = "cuaHang")
-    private Set<SanPham> sanPhams;
+    private Set<CuaHang_SanPham> cuaHangSanPhams;
 
     @OneToMany(mappedBy = "cuaHang")
     private Set<Images> images;
+
+    public Set<CuaHang_SanPham> getCuaHangSanPhams() {
+        return cuaHangSanPhams;
+    }
+
+    public void setCuaHangSanPhams(Set<CuaHang_SanPham> cuaHangSanPhams) {
+        this.cuaHangSanPhams = cuaHangSanPhams;
+    }
 
     @ManyToMany(mappedBy = "cuaHangs")
     private Set<LoaiSanPham> loaiSanPhams;
@@ -121,13 +129,7 @@ public class CuaHang extends BaseEntity {
         this.hoaDons = hoaDons;
     }
 
-    public Set<SanPham> getSanPhams() {
-        return sanPhams;
-    }
 
-    public void setSanPhams(Set<SanPham> sanPhams) {
-        this.sanPhams = sanPhams;
-    }
 
     public Set<Images> getImages() {
         return images;

@@ -6,20 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-@RestController("/api/diachi")
+@RestController
+@RequestMapping("/api/diachi")
 public class DiaChiController {
     @Autowired
     DiaChiServiceImplement diaChiServiceImplement;
-    @PostMapping("add")
+
+    @GetMapping()
+    public List<DiaChi> LayTatCaDC(){
+        return diaChiServiceImplement.getall();
+    }
+
+    @PostMapping()
     public DiaChi ThemDiaChi(@RequestBody DiaChi diaChi){
         return diaChiServiceImplement.add(diaChi);
     }
-    @PutMapping("change")
+    @PutMapping()
     public DiaChi SuaDiaChi(@RequestParam long id,@RequestBody DiaChi diaChi){
         return diaChiServiceImplement.change(id,diaChi);
     }
-    @DeleteMapping("delete")
+    @DeleteMapping()
     public List<DiaChi> XoaDiaChi(@RequestParam long id){
         return diaChiServiceImplement.del(id);
     }

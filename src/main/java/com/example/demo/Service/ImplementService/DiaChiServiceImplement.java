@@ -38,4 +38,9 @@ public class DiaChiServiceImplement implements DiaChiService {
         dcold.setXa(dc.getXa());
         return dcold;
     }
+
+    @Override
+    public List<DiaChi> getall() {
+        return diaChiRepo.findAll();
+    }
 }

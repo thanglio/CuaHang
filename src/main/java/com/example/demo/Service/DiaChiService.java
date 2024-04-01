@@ -8,4 +8,5 @@ public interface DiaChiService {
     public DiaChi add(DiaChi dc);
     public List<DiaChi> del(long id);
     public DiaChi change(long id, DiaChi dc);
+    public List<DiaChi> getall();
 }

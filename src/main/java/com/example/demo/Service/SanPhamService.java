@@ -5,9 +5,10 @@ import com.example.demo.Entity.SanPham;
 import java.util.List;
 
 public interface SanPhamService {
-    public SanPham ThemSanPham(SanPham sanPham);
-    public  SanPham SuaSanPham(long id,SanPham sanPham);
-    public  String XoaSanPham(long id);
-    public List<SanPham> ThemVaoCuaHang(long idSP, long idCH);
+    public List<SanPham> GetAll();
+    public List<SanPham> ThemSanPham(SanPham sanPham);
+    public List<SanPham> SuaSanPham(long id,SanPham sanPham);
+    public List<SanPham> XoaSanPham(long id);
+    public List<SanPham> ThemVaoCuaHang(long idSP, long idCH,int soLuong);
 
 }
